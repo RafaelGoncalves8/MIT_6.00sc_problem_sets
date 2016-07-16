@@ -1,4 +1,4 @@
-# # # 09 - Generators:
+# # # 09 - Generators and random walks:
 
 
 from ex08 import *
@@ -38,7 +38,7 @@ SixHundred.addStudent(ug2)
    # print u
    
 # # # Analytic methods:
-# # predict behavior, given the conditions and conditions
+# # predict behavior, given the conditions and parameters
 
 # # # Simulation methods:
 # # systems not mathematical trackable
@@ -47,6 +47,7 @@ SixHundred.addStudent(ug2)
 # build a method that gives useful information about the behavior of systems
 # approximation to reality 
 # descriptive, not prescript
+# useful when its difficult to create a matematical module
 
 # # Random Walks
 
@@ -72,7 +73,7 @@ class Location(object):
 		return (xDist**2 + yDist**2)**0.5
 	def __str__(self):
 		return '<' + str(self.x) + ', ' + str(self.y) + '>'
-		
+
 class Field(object):
     def __init__(self):
         self.drunks = {}
@@ -107,19 +108,19 @@ def walk(f, d, numSteps):
         f.moveDrunk(d)
     return(start.distFrom(f.getLoc(d)))
 
-# hommer = Drunk('Hommer')
-# field = Field()
-# location = Location(0, 0)
-# field.addDrunk(hommer, location)
+hommer = Drunk('Hommer')
+field = Field()
+location = Location(0, 0)
+field.addDrunk(hommer, location)
 
-# walk(field, hommer, 10)
-# print field.getLoc(hommer)
-
-# walk(field, hommer, 10)
-# print field.getLoc(hommer)
-
-# walk(field, hommer, 10)
-# print field.getLoc(hommer)
+#walk(field, hommer, 10)
+#print field.getLoc(hommer)
+#
+#walk(field, hommer, 10)
+#print field.getLoc(hommer)
+#
+#walk(field, hommer, 10)
+#print field.getLoc(hommer)
 	
 def simWalks(numSteps, numTrials):
     homer = Drunk('Homer')
@@ -128,7 +129,7 @@ def simWalks(numSteps, numTrials):
     for t in range(numTrials):
         f = Field()
         f.addDrunk(homer, origin)
-        distances.append(walk(f, homer, numTrials))
+        distances.append(walk(f, homer, numSteps))
     return distances
 
 def drunkTest(numTrials):
@@ -138,7 +139,10 @@ def drunkTest(numTrials):
         print '  Mean =', sum(distances)/len(distances)
         print '  Max =', max(distances), 'Min =', min(distances)
 		
-sim = simWalks(10, 5)
-print sim
+#sim = simWalks(10, 5)
+#print sim
+#
+#sim1 = drunkTest(10)
+#
+#print sim1
 
-sim2 = drunkTest(10)

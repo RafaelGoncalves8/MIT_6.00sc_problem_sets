@@ -1,7 +1,8 @@
 # # # 07 - Hashing
 # # Hash: converts i into a int in range(0, k)
 # # Hash is many-to-one
-# # Colision: linear rehash
+# # Colision: when two values matches the same hash.
+## Solution: linear rehash (list of entries in each hash)
 
 numBuckets = 47
 

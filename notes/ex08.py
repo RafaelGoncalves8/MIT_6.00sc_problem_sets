@@ -2,11 +2,11 @@
 # # Objected-Oriented programming
 # # Module = collection of functions. Ex: import math // math.log (function log into file math)
 # # Class = collection of data + functions. Ex: L.append(e) - associate attribute with object 
-# #                                                           L = object / append(e) = message(attribute) to the obj(of class 'List') L
-# # Method = Function associated with and object(of given class. Ex: methods for ints, floats, lists, dicts. In the example, the method is append
+# # L = object / append(e) = attribute to the obj(of class 'List') L
+# # Method = Function associated with an object(of given class. Ex: methods for ints, floats, lists, dicts. In the example, the method is append
 # # Lists, Dicts = Built in classes
 # # Libraries = collection of classes
-# # Abstract data type(class)
+# # Abstract data type(class) - Interface
 # # Inheritance = sub-classes have common attributes in relation of the super-classes
 
 
