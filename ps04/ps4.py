@@ -141,8 +141,8 @@ def build_coder(shift):
 			e -= 1
 	return coder
 	
-# print build_coder(2)
-# print build_coder(-2)
+#print build_coder(2)
+#print build_coder(-2)
 
 def build_encoder(shift):
 	"""
@@ -224,7 +224,8 @@ def apply_coder(text, coder):
 	ans = ''.join(ans)
 	return ans
 	
-# print apply_coder('vguv', build_decoder(2))
+#print apply_coder('test', build_encoder(2))
+#print apply_coder('vguv', build_decoder(2))
 
 def apply_shift(text, shift, function = build_encoder):
 	"""
@@ -264,7 +265,8 @@ def apply_shift(text, shift, function = build_encoder):
 	ans = ''.join(ans)
 	return ans
 
-# print apply_shift('Apq hq hiham a.', 8)
+#print apply_shift('This is just a test.', 8)
+#print apply_shift('Apq hq hrb ahiham a.', -8)
 
 
 # Problem 2: Codebreaking.
@@ -299,10 +301,10 @@ def find_best_shift(text, wordlist = load_words()):
 			numWords = Words
 	return best_shift
 	
-# a = find_best_shift('Pmttw,hdwztl!')
-# print a
-# print apply_shift('Pmttw,hdwztl!', -a)
-#
+#a = find_best_shift('Pmttw,hdwztl!')
+#print a
+#print apply_shift('Pmttw,hdwztl!', -a)
+
 # Problem 3: Multi-level encryption.
 #
 def apply_shifts(text, shifts):
@@ -341,7 +343,7 @@ def apply_shifts(text, shifts):
 	except:
 		return None
 
-# print apply_shifts('Do Androids Dream of Electric Sheep?', [(0,6), (3, 18), (12, 16)])
+#print apply_shifts('Do Androids Dream of Electric Sheep?', [(0,6), (3, 18), (12, 16)])
 	
 #
 # Problem 4: Multi-level decryption.
@@ -376,6 +378,13 @@ def find_best_shifts(wordlist, text):
 	>>> print apply_shifts(s, shifts)
 	Do Androids Dream of Electric Sheep?
 	"""
+        start = 0
+        ans = ''
+        ntext = text
+        while start < len(text):
+            ntext = find_best_shifts_rec(wordlist, ntext, start)
+            start = 
+            
 
 
 def find_best_shifts_rec(wordlist, text, start):
@@ -392,7 +401,28 @@ def find_best_shifts_rec(wordlist, text, start):
 	start: where to start looking at shifts
 	returns: list of tuples.  each tuple is (position in text, amount of shift)
 	"""
-	### TODO.
+	ntext = apply_shift(text, best_shift(text))
+        mtext = ntext
+        mtext.split(" ")
+        mtext[-1].split("")
+        ltext = ''
+        a = 0
+        while is_word(word) == False:
+            word = word+ntext[-1][a]
+            a+=1
+        mtext.remove[-1]
+        for word in mtext:
+            if word != mtext[-1]:
+                ltext.append(word)
+                ltext.append(' ')
+            else:
+                ltext.append(word)
+        nstart = len(ltext) + a
+        if len(ans) < len(text):
+            return find_best_shifts_rec(wordlist, ntext, nstart)
+        else:
+            return ans
+        
 
 
 def decrypt_fable():
@@ -405,10 +435,13 @@ def decrypt_fable():
 
 	returns: string - fable in plain text
 	"""
-	### TODO.
+	fable= get_fable_string()
+        shifts = find_best_shifts(wordlist, fable)
+        ans = apply_shifts(fable, shifts)
+        return ans
 
-
-
+#fable = decrypt_fable()
+#print fable
 	
 #What is the moral of the story?
 #
