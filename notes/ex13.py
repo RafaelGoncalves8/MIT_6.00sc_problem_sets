@@ -127,8 +127,9 @@ def testBest():
 # Unsupervisioned (clusters)
 # Hierarchical clustering: ex. aglomerative
 # 1) Separate each element in clusters
-# 2) Merge most common elements
+# 2) Merge most common clusters
 # 3) Repeat
+# Deterministic
 #
 # Features: vector of numbers
 # Scaling influentiate the cluster separations
@@ -147,6 +148,7 @@ def testBest():
 # 4) For each new cluster, choose a new centroid
 # 5) Assign each point to nearest centroid
 # 6) Repeat 4 and 5 until change is "small"
+# Non-deterministic
 
 import pylab, random, string, copy
 
@@ -641,4 +643,5 @@ def test3(fileName, scale = False, filterName = 'all',
     for c in clusters:
         print '  C' + str(index) + ':', c
         index += 1
+
 
